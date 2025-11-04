@@ -35,5 +35,13 @@ RSpec.describe StringCalculator do
     it "raise an error in case  of invalid number entry" do
       expect { calc.add("//;\n1;2,7") }.to raise_error(ArgumentError, /invalid value for Integer\(\): "2,7"/)
     end
+
+    it "handles multiple newlines and comma between numbers" do
+      expect(calc.add("1\n2,3\n6,6,12\n5")).to eq(35)
+    end
+
+    it "handles custom  delimiter  '*' " do
+      expect(calc.add("//*\n1*2")).to eq(3)
+    end
   end
 end
