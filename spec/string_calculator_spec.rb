@@ -17,7 +17,7 @@ RSpec.describe StringCalculator do
     end
 
     it "sum of multiple  numbers" do
-      expect(calc.add("1,2,3,4,7")).to eq(10)
+      expect(calc.add("1,2,3,4,7")).to eq(17)
     end
 
     it "handles newlines between numbers" do
